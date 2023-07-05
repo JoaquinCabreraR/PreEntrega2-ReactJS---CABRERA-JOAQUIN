@@ -1,8 +1,11 @@
+import Item from "../Item/item";
+import "../CSS/ItemList.css";
+
 
 const ItemList = ({products}) => {
     return(
-        <div>
-            <img src={products.img}/>
+        <div className="listGroup">
+            {products.map(prod => <Item key={prod.id} {...prod}/>)}
         </div>
     )
 }

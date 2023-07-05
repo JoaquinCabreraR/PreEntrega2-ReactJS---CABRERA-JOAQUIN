@@ -5,6 +5,7 @@ const products = [
         price: 2500,
         category: "Mixer DJ",
         img: "https://www.pioneerdj.com/-/media/pioneerdj/images/products/mixer/djm-v10-lf/djm-v10-lf-top.png?h=1170&w=1029&hash=C23FCBF179AACBB360D6009BFCC65D9A",
+        description: "Lo sentimos, estamos trabajando para redactar la mejor descripcion posible. Disculpe las molestias.",
         stock: 5,
     },
     {
@@ -13,6 +14,7 @@ const products = [
         price: 200,
         category: "Auriculares DJ",
         img: "https://assets.sennheiser.com/img/6553/product_detail_x2_tablet_HD_25_PLUS_Isofront_RGB_red_optm..jpg",
+        description: "Lo sentimos, estamos trabajando para redactar la mejor descripcion posible. Disculpe las molestias.",
         stock: 8,
     },
     {
@@ -21,6 +23,7 @@ const products = [
         price: 1900,
         category: "Reproductores DJ",
         img: "https://www.pioneerdj.com/-/media/pioneerdj/images/products/player/cdj-3000/black/cdj-3000-top-hero-sp.png",
+        description: "Lo sentimos, estamos trabajando para redactar la mejor descripcion posible. Disculpe las molestias.",
         stock: 12,
     },
 ]
@@ -32,3 +35,20 @@ export const getProducts = () => {
         }, 500)
     ))
 }
+
+export const getProductsById = (productId) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products.find(prod => prod.id === productId))
+        }, 500)
+    })
+}
+
+export const getProductsByCategory = (productId) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products.find(prod => prod.id === productId))
+        }, 500)
+    })
+}
+
