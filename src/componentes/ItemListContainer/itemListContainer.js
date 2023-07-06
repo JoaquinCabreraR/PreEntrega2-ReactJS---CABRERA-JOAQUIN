@@ -10,9 +10,9 @@ const ItemListContainer = ({greeting}) => {
     const {categoryId} = useParams()
 
     useEffect(() => {
-        const asyncFunc = categoryId ? getProductsByCategory : getProducts
+        const asyncFunc = categoryId ? getProductsByCategory(categoryId) : getProducts()
 
-        asyncFunc(categoryId)
+        asyncFunc
             .then(response => {
                 setProducts(response)
             })

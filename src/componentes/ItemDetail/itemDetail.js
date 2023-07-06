@@ -1,6 +1,7 @@
 import ItemCount from "../ItemCount/itemCount";
 
 const ItemDetail = ({id, name, price, category, img, description, stock}) => {
+
     return (
         <article>
             <header>
