@@ -1,4 +1,5 @@
 import ItemCount from "../ItemCount/itemCount";
+import "../CSS/ItemDetail.css";
 
 const ItemDetail = ({id, name, price, category, img, description, stock}) => {
 
@@ -10,7 +11,7 @@ const ItemDetail = ({id, name, price, category, img, description, stock}) => {
                 </h2>
             </header>
             <picture>
-                <img src={img} alt={name} />
+                <img src={img} alt={name} className="imagenDetalle"/>
             </picture>
             <section>
                 <p>
