@@ -12,6 +12,7 @@ function NavBar(){
                 <NavLink to={"/category/mixer"} className={({isActive}) => isActive ? "ActiveOption" : "Option"}>Mixer</NavLink>
                 <NavLink to={"/category/auriculares"} className={({isActive}) => isActive ? "ActiveOption" : "Option"}>Auriculares</NavLink>
                 <NavLink to={"/category/reproductores"} className={({isActive}) => isActive ? "ActiveOption" : "Option"}>Reproductores</NavLink>
+                <NavLink to={"/category/monitores"} className={({isActive}) => isActive ? "ActiveOption" : "Option"}>Monitores</NavLink>
             </div>
             <CartWidget/>
         </nav>
