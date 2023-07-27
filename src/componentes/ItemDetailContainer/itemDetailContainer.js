@@ -7,7 +7,7 @@ import { db } from "../../config/firebase";
 
 
 const ItemDetailContainer = () =>{
-    const [product, setProduct] = useState(null);
+    const [productos, setProductos] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const {itemId} = useParams()
@@ -15,13 +15,13 @@ const ItemDetailContainer = () =>{
     useEffect(() => {
         setLoading(true)
 
-        const docRef = doc (db, "products", itemId)
+        const docRef = doc (db, "productos", itemId)
 
         getDoc(docRef)
             .then(response => {
                 const data = response.data()
-                const productsAdapted = {id: response.id, ...data}
-                setProduct(productsAdapted)
+                const productosAdapted = {id: response.id, ...data}
+                setProductos(productosAdapted)
             })
             .catch(error => {
                 console.log(error)
@@ -34,11 +34,11 @@ const ItemDetailContainer = () =>{
 
     return(
         <div>
-            <ItemDetail {...product} />
+            <ItemDetail {...productos} />
             {loading ? (
                 <p>Cargando...</p>
             ) : (
-                <ItemDetail {...product} />
+                <ItemDetail {...productos} />
             )}
         </div>
     )

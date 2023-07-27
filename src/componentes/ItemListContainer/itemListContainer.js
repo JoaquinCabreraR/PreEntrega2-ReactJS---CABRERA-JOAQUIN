@@ -7,7 +7,7 @@ import  {db} from "../../config/firebase";
 
 const ItemListContainer = ({greeting}) => {
 
-    const [products, setProducts] = useState([])
+    const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
 
     const {categoryId} = useParams()
@@ -16,16 +16,16 @@ const ItemListContainer = ({greeting}) => {
         setLoading(true)
         
         const collectionRef = categoryId
-            ? query(collection(db, "products"), where("category", "==", categoryId))
-            : collection(db, "products")
+            ? query(collection(db, "productos"), where("category", "==", categoryId))
+            : collection(db, "productos")
 
         getDocs(collectionRef)
             .then(response => {
-                const productsAdapted = response.docs.map(doc => {
+                const productosAdapted = response.docs.map(doc => {
                     const data = doc.data()
                     return {id: doc.id, ...data}
                 })
-                setProducts(productsAdapted)
+                setProductos(productosAdapted)
             })
             .catch(error => {
                 console.log(error)
@@ -42,7 +42,7 @@ const ItemListContainer = ({greeting}) => {
             {loading ? (
                 <p>Cargando...</p>
             ) : (
-                <ItemList {...products}/>
+                <ItemList productos={productos}/>
             )}
         </div>
     )
