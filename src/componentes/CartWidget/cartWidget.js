@@ -17,6 +17,3 @@ const CartWidget = () => {
 
 export default CartWidget;
 
-
-
-//style={{display: totalQuantity > 0 ? "block" : "none"}}
