@@ -10,7 +10,7 @@ import Checkout from "./componentes/CheckOut/checkOut.js";
 
 function App(){
     return(
-        <div className="contenedorNav">
+        <div className="body">
             <BrowserRouter>
                 <CartProvider>
                     <NavBar/>

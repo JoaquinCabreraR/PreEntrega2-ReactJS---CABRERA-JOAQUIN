@@ -1,5 +1,16 @@
 .listGroup{
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
     height: 150px;
     width: 150px;
 }
+
+.productos{
+    margin-bottom: 25px;
+}
+
+.titu{
+    font-weight: bolder;
+}
+

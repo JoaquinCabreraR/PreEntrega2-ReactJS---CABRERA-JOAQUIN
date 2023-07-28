@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "../CSS/ItemList.css";
 
 const Item = ({id, name, price, category, img, description, stock}) => {
 
     return(
-        <article>
+        <article className="productos">
             <header>
-                <h2>
+                <h2 className="titu">
                     {name}
                 </h2>
             </header>

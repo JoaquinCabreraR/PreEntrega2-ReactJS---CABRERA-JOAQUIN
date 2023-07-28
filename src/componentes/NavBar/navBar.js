@@ -6,7 +6,7 @@ function NavBar(){
     return(
         <nav className="navBar">
             <Link to="/">
-                <h3>BPM Shop</h3>
+                <h3 className="tituloPrincipal">BPM Shop</h3>
             </Link>
             <div className="paginasMenu">
                 <NavLink to={"/category/mixer"} className={({isActive}) => isActive ? "ActiveOption" : "Option"}>Mixer</NavLink>
@@ -14,7 +14,9 @@ function NavBar(){
                 <NavLink to={"/category/auriculares"} className={({isActive}) => isActive ? "ActiveOption" : "Option"}>Auriculares</NavLink>
                 <NavLink to={"/category/monitores"} className={({isActive}) => isActive ? "ActiveOption" : "Option"}>Monitores</NavLink>
             </div>
-            <CartWidget/>
+            <div className="carrito1">
+                <CartWidget/>
+            </div>
         </nav>
     )
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../CSS/CheckForm.css";
 
 const CheckoutForm = ({ onConfirm }) => {
     const [name, setName] = useState("")
@@ -15,7 +16,7 @@ const CheckoutForm = ({ onConfirm }) => {
 
     return (
         <div>
-            <form onSubmit={handleConfirm}>
+            <form onSubmit={handleConfirm} className="formulario">
                 <label>
                     Nombre
                     <input
@@ -41,7 +42,7 @@ const CheckoutForm = ({ onConfirm }) => {
                     />
                 </label>
                 <div>
-                    <button type="submit">Crear Orden</button>
+                    <button type="submit" className="botonCrear">Crear Orden</button>
                 </div>
             </form>
         </div>

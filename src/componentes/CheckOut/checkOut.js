@@ -1,13 +1,14 @@
 import { useContext, useState } from "react";
 import { db } from "../../config/firebase";
 import { CartContext } from "../Context/cartContext";
+import { Link } from "react-router-dom";
 import { Timestamp, addDoc, collection, getDocs, query, where, writeBatch, documentId } from "firebase/firestore";
 import CheckoutForm from "../CheckForm/checkForm";
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
     const [orderId, setOrderId] = useState("")
-    const { cart, total, clearCart } = useContext(CartContext)
+    const { cart, clearCart } = useContext(CartContext)
 
     const createOrder = async ({ name, phone, email }) => {
         setLoading(true)
@@ -18,7 +19,6 @@ const Checkout = () => {
                     name, phone, email
                 },
                 items: cart,
-                total: total,
                 date: Timestamp.fromDate(new Date())
             }
             const batch = writeBatch(db)
@@ -63,13 +63,13 @@ const Checkout = () => {
     }
 
     if (orderId) {
-        return <h1>Orden: {orderId}</h1>
+        return <h1>Orden ID: {orderId}</h1>
     }
 
     return (
         <div>
-            <h1>Salir</h1>
             <CheckoutForm onConfirm={createOrder} />
+            <Link to="/">Salir</Link>
         </div>
     )
 }

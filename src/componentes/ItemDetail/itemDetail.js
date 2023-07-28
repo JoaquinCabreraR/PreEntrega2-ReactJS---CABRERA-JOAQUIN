@@ -21,21 +21,21 @@ const ItemDetail = ({id, name, price, category, img, description, stock}) => {
     return (
         <article>
             <header>
-                <h2>
+                <h2 className="tituloDetalle">
                     {name}
                 </h2>
             </header>
             <picture>
                 <img src={img} alt={name} className="imagenDetalle"/>
             </picture>
-            <section>
-                <p>
+            <section className="seccionDetalle">
+                <p className="categoria">
                     Categoria: {category}
                 </p>
-                <p>
-                    Descripcion: {description}
+                <p className="descripcion">
+                    {description}
                 </p>
-                <p>
+                <p className="precio">
                     Precio: U$S {price}
                 </p>
             </section>
