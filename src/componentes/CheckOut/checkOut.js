@@ -25,8 +25,8 @@ const Checkout = () => {
             const outOfStock = []
             const ids = cart.map(prod => prod.id)
             const productsRef = collection(db, "productos")
-            const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)))
-            const { docs } = productsAddedFromFirestore
+            const productosAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), "in", ids)))
+            const { docs } = productosAddedFromFirestore
 
             docs.forEach(doc => {
                 const dataDoc = doc.data()
